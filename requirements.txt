@@ -1,7 +1,9 @@
 Django==2.1.4
+Fabric3==1.14.post1
 bandit==1.5.1
 codecov==2.0.15
 coverage==4.5.2
 pylint==2.2.2
 pytest==4.0.2
 tox==3.6.1
+git+https://github.com/rolafium/doc-extract.git
