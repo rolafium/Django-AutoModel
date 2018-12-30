@@ -1,5 +1,6 @@
 Django==2.1.4
 bandit==1.5.1
+codecov==2.0.15
 coverage==4.5.2
 pylint==2.2.2
 pytest==4.0.2
