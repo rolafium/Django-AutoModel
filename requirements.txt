@@ -2,3 +2,4 @@ bandit==1.5.1
 coverage==4.5.2
 pylint==2.2.2
 pytest==4.0.2
+tox==3.6.1
