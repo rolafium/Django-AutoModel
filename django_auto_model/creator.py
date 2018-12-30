@@ -178,16 +178,3 @@ class ModelCreator(object):
             return None
         else:
             return cls.create_model(field.remote_field.model)
-
-
-def create_model(model):
-    """
-    Creates a model instance.
-
-    Wrapper over ModelCreator.create_model -
-    See ModelCreator.create_model documentation
-
-    :param model: django.db.models.Model child class
-    :returns: django.db.models.Model child class instance
-    """
-    return ModelCreator.create_model(model)
