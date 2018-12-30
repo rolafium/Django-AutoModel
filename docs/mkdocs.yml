@@ -1,4 +1,3 @@
 site_name: Django Auto Model
 docs_dir: .
-site_dir: ../docs-site
 theme: readthedocs
