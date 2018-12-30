@@ -21,6 +21,7 @@ jobs:
       script:
         - echo "Deploying to GitHub Pages."
         - fab create_docs
+        - ls -la docs-site
       deploy:
         provider: pages
         skip-cleanup: true

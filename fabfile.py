@@ -24,7 +24,7 @@ def serve_docs():
     Serves the docs without creating the site folder
     """
     prepare_docs()
-    local("mkdocs serve --config-file docs/mkdocs.yml")
+    local("mkdocs serve --config-file docs/mkdocs.yml --no-livereload")
 
 def create_docs():
     """

@@ -31,20 +31,24 @@ def create_module_markdown_files():
     serialized = structure.serialize()
 
     for module in serialized["modules"]:
-        if module["module"]["name"].startswith("django_auto_model.tests"):
+        module_name = module["module"]["name"]
+        if module_name.startswith("django_auto_model.tests"):
+            print(f"- Skipping module {module_name} (Test module)")
             continue
 
         if not module["classes"] and not module["functions"]:
+            print(f"- Skipping module {module_name} (No classes, no functions)")
             continue
 
         filename = (
-            f"{CURRENT_DIR}/modules/{module['module']['name']}"
+            f"{CURRENT_DIR}/modules/{module_name}"
             .replace("django_auto_model.", "")
             .replace(".", "_") + ".md"
         )
 
         with open(filename, "w") as file_pointer:
             file_pointer.write(format_module(module))
+            print(f"+ Generated {filename}")
 
 def format_module(serialized_module):
     """
@@ -83,5 +87,3 @@ CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 MODULE_TEMPLATE = read_file(f"{CURRENT_DIR}/templates/module_template.md")
 CLASS_TEMPLATE = read_file(f"{CURRENT_DIR}/templates/class_template.md")
 FUNCTION_TEMPLATE = read_file(f"{CURRENT_DIR}/templates/function_template.md")
-
-print(MODULE_TEMPLATE)
