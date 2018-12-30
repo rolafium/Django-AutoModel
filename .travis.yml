@@ -8,4 +8,4 @@ install:
 script:
   - echo "Running Unit Tests."
   - tox -e travis
-  - codecov
+  - codecov --gcov-glob "**/test_*.py"
