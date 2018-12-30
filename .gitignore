@@ -1,12 +1,18 @@
 # Private files
 .vscode
 
-# Build files
+# Python build files
 *.pyc
 __pycache__
 .tox
+
+# Coverage build files
 .coverage
 coverage
+
+# Documentation build files
+docs/*.md
+docs/modules/*.md
 
 # Virtual env
 automodel-venv
