@@ -1,6 +1,14 @@
 import os
 from setuptools import find_packages, setup
-from django_auto_model.info import PROJECT_TAG, VERSION
+from django_auto_model.info import (
+    VERSION,
+    PROJECT_TAG,
+    PROJECT_URL,
+    AUTHORS,
+    SHORT_DESCRIPTION,
+    LICENSE_TYPE,
+)
+
 
 with open(os.path.join(os.path.dirname(__file__), "README.md")) as fp:
     README = fp.read()
@@ -10,12 +18,12 @@ setup(
     version=VERSION,
     packages=find_packages(),
     include_package_data=True,
-    license="MIT",
-    description="Auto create instances of your model in your tests",
+    license=LICENSE_TYPE,
+    description=SHORT_DESCRIPTION,
     long_description=README,
-    url="https://github.com/rolafium/Django-AutoModel",
-    author="William Di Pasquale",
-    author_email="rolafium@protonmail.com",
+    url=PROJECT_URL,
+    author=", ".join(author["name"] for author in AUTHORS),
+    author_email=", ".join(author["email"] for author in AUTHORS),
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
