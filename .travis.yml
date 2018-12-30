@@ -1,8 +1,10 @@
 language: python
-node_js:
+python:
+  - "3.5"
   - "3.6"
+  - "3.7-dev"
 install:
   pip install -r requirements.txt
 script:
   - echo "Running Unit Tests."
-  - tox
+  - tox -e travis

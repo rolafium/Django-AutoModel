@@ -85,5 +85,4 @@ def _get_value_for_foreign_key(model_creator, field): # pylint: disable=W0613
     """
     if field.null:
         return None
-    else:
-        return model_creator.create_model(field.remote_field.model)
+    return model_creator.create_model(field.remote_field.model)
