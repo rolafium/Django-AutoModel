@@ -9,3 +9,23 @@ script:
   - echo "Running Unit Tests."
   - tox -e travis
   - codecov --gcov-glob "**/test_*.py"
+
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: "deploy"
+      python: "3.6"
+      script:
+        - echo "Deploying to GitHub Pages."
+        - fab create_docs
+      deploy:
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        target-branch: gh-pages
+        local-dir: docs-site
+        on:
+          branch: master
