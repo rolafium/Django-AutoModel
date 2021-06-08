@@ -4,7 +4,7 @@ bandit==1.7.0
 codecov==2.1.11
 coverage==5.5
 mkdocs==1.2
-pylint==2.7.2
+pylint==2.8.3
 pytest==6.2.2
 tox==3.22.0
 git+https://github.com/rolafium/doc-extract.git
